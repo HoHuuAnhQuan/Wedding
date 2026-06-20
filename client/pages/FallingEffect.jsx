@@ -4,18 +4,17 @@ const FallingEffect = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // Các ký tự hoa và trái tim sẽ rơi
     const icons = ['🌸', '❤️', '💕', '💮', '💖'];
     
-    // Tạo ngẫu nhiên 30 vật thể rơi ban đầu
+    // Tạo 30 vật thể rơi ngẫu nhiên
     const initialItems = Array.from({ length: 30 }).map((_, index) => ({
       id: index,
       char: icons[Math.floor(Math.random() * icons.length)],
-      left: Math.random() * 100, // Vị trí ngang (%)
-      animationDelay: Math.random() * 10, // Độ trễ khi bắt đầu (s)
-      animationDuration: 6 + Math.random() * 8, // Tốc độ rơi (s)
-      fontSize: 12 + Math.random() * 16, // Kích thước (px)
-      opacity: 0.4 + Math.random() * 0.5 // Độ mờ
+      left: Math.random() * 100, 
+      animationDelay: Math.random() * 8, 
+      animationDuration: 6 + Math.random() * 6, // Tốc độ rơi từ 6s - 12s cho tự nhiên
+      fontSize: 14 + Math.random() * 14, 
+      opacity: 0.4 + Math.random() * 0.5 
     }));
     
     setItems(initialItems);
@@ -39,14 +38,13 @@ const FallingEffect = () => {
           {item.char}
         </span>
       ))}
-      {/* Nhúng đoạn CSS animation vào */}
       <style>{`
         @keyframes fall {
           0% {
-            transform: translateY(-5vh) rotate(0deg);
+            transform: translateY(-10vh) rotate(0deg);
           }
           100% {
-            transform: translateY(105vh) rotate(360deg);
+            transform: translateY(110vh) rotate(360deg);
           }
         }
         .falling-item {
@@ -61,13 +59,13 @@ const FallingEffect = () => {
 
 const styles = {
   container: {
-    position: 'fixed',
+    position: 'fixed', // Giữ cố định theo góc nhìn màn hình
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
-    pointerEvents: 'none', // Không cản trở người dùng click trên web
-    zIndex: 999, // Nổi lên trên cùng nền
+    width: '100vw',    // Tràn toàn bộ chiều rộng màn hình
+    height: '100vh',   // Tràn toàn bộ chiều cao màn hình
+    pointerEvents: 'none', 
+    zIndex: 9999,      // Đảm bảo luôn nổi lên trên cùng các lớp nền khác
     overflow: 'hidden',
   },
   item: {

@@ -78,7 +78,6 @@ export default function Index() {
   return (
     
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#FFF8F3" }}>
-      <ScrollReveal>
       <FallingEffect />
       {/* HERO SECTION */}
       <section className="relative overflow-hidden pb-0">
@@ -201,7 +200,6 @@ export default function Index() {
             </div>
           </FadeIn>
         </section>
-        
         {/* First wedding poster */}
         <FadeIn>
           <div className="flex justify-center px-4">
@@ -337,7 +335,6 @@ export default function Index() {
 
         </div>
       </section>
-
       {/* SECOND WEDDING POSTER */}
       <section className="px-4 sm:px-6 py-4">
         <FadeIn>
@@ -479,7 +476,6 @@ export default function Index() {
         </div>
       </section>
     <WeddingAlbum />
-    </ScrollReveal>
     </div>
   );
 }
