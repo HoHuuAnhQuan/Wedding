@@ -9,9 +9,9 @@ function FadeIn({ children, delay = 0, direction = "up" }) {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
-        observer.unobserve(domRef.current); // Chạy hiệu ứng 1 lần duy nhất khi cuộn đến
+        observer.unobserve(domRef.current);
       }
-    }, { threshold: 0.05 }); // Kích hoạt khi cấu phần chớm xuất hiện 5% trên màn hình
+    }, { threshold: 0.05 });
 
     if (domRef.current) {
       observer.observe(domRef.current);
@@ -50,7 +50,6 @@ export default function Index() {
   });
 
   useEffect(() => {
-    // Đặt ngày cưới: 14:30 ngày 20/07/2026
     const targetDate = new Date("2026-07-20T14:30:00").getTime();
 
     const interval = setInterval(() => {
@@ -72,14 +71,12 @@ export default function Index() {
 
     return () => clearInterval(interval);
   }, []);
-  // --- KẾT THÚC LOGIC COUNTDOWN ---
 
   return (
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#FFF8F3" }}>
       
       {/* HERO SECTION */}
       <section className="relative overflow-hidden pb-0">
-        {/* Floral decoration - overflow left */}
         <div className="absolute left-[40%] top-24 -translate-x-1/2 pointer-events-none z-0 transition-transform duration-1000 hover:scale-105">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/27f4287520c53e7f887236d692b0a71b4d9fe7ab?width=466"
@@ -90,7 +87,6 @@ export default function Index() {
         </div>
 
         <div className="relative z-10 flex flex-col items-center px-6 pt-16 pb-0 text-center">
-          {/* Title */}
           <FadeIn delay={100}>
             <h1
               className="text-[28px] sm:text-[34px] tracking-widest mb-2"
@@ -100,7 +96,6 @@ export default function Index() {
             </h1>
           </FadeIn>
 
-          {/* Couple names - Great Vibes script */}
           <FadeIn delay={300}>
             <p
               className="text-[20px] sm:text-[23px] mb-6"
@@ -114,7 +109,6 @@ export default function Index() {
             </p>
           </FadeIn>
 
-          {/* Date */}
           <FadeIn delay={500}>
             <div
               className="text-[64px] sm:text-[80px] leading-none mb-8"
@@ -127,7 +121,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* QUOTE + FIRST POSTER */}
+      {/* QUOTE */}
       <section className="px-4 sm:px-6 pb-0">
         <FadeIn delay={200}>
           <p
@@ -142,21 +136,17 @@ export default function Index() {
           </p>
         </FadeIn>
 
-        {/* COUNTDOWN SECTION - THẺ ĐẾM NGƯỢC TRÊN ẢNH CƯỚI */}
+        {/* COUNTDOWN SECTION */}
         <section className="relative w-full max-w-5xl mx-auto my-12 px-4 sm:px-8">
           <FadeIn delay={300}>
             <div className="relative w-full rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px]">
-              {/* Ảnh nền Wedding */}
               <img
                 src="https://tse1.mm.bing.net/th/id/OIP.hhnBrMssebLY3IWlshHvfQHaDQ?rs=1&pid=ImgDetMain&o=7&rm=3"
                 alt="Wedding background for countdown"
                 className="absolute inset-0 w-full h-full object-cover object-center transform transition-transform duration-[6000ms] hover:scale-105"
               />
-              
-              {/* Lớp phủ làm tối/sáng nhẹ */}
               <div className="absolute inset-0 bg-black/20"></div>
 
-              {/* Thẻ Countdown nằm chính giữa */}
               <div className="absolute inset-0 flex items-center justify-center p-4">
                 <div className="bg-white/85 backdrop-blur-md rounded-2xl py-8 px-4 sm:px-12 text-center shadow-2xl w-full max-w-2xl border border-white/50">
                   <h3
@@ -167,7 +157,6 @@ export default function Index() {
                   </h3>
 
                   <div className="flex justify-center items-center gap-2 sm:gap-6 text-[#0b1f3f]">
-                    {/* Ngày */}
                     <div className="flex flex-col items-center w-[70px] sm:w-[90px] transition-transform duration-300 hover:scale-110">
                       <span className="text-[36px] sm:text-[56px] leading-none mb-2" style={{ fontFamily: "'Inria Serif', serif" }}>
                         {timeLeft.days}
@@ -177,7 +166,6 @@ export default function Index() {
 
                     <span className="text-[30px] sm:text-[40px] font-light leading-none text-[#e09b9b] pb-6 animate-pulse">:</span>
 
-                    {/* Giờ */}
                     <div className="flex flex-col items-center w-[70px] sm:w-[90px] transition-transform duration-300 hover:scale-110">
                       <span className="text-[36px] sm:text-[56px] leading-none mb-2" style={{ fontFamily: "'Inria Serif', serif" }}>
                         {timeLeft.hours.toString().padStart(2, '0')}
@@ -187,7 +175,6 @@ export default function Index() {
 
                     <span className="text-[30px] sm:text-[40px] font-light leading-none text-[#e09b9b] pb-6 animate-pulse">:</span>
 
-                    {/* Phút */}
                     <div className="flex flex-col items-center w-[70px] sm:w-[90px] transition-transform duration-300 hover:scale-110">
                       <span className="text-[36px] sm:text-[56px] leading-none mb-2" style={{ fontFamily: "'Inria Serif', serif" }}>
                         {timeLeft.minutes.toString().padStart(2, '0')}
@@ -197,7 +184,6 @@ export default function Index() {
 
                     <span className="text-[30px] sm:text-[40px] font-light leading-none text-[#e09b9b] pb-6 animate-pulse">:</span>
 
-                    {/* Giây */}
                     <div className="flex flex-col items-center w-[70px] sm:w-[90px] transition-transform duration-300 hover:scale-110">
                       <span className="text-[36px] sm:text-[56px] leading-none mb-2" style={{ fontFamily: "'Inria Serif', serif", color: "#e09b9b" }}>
                         {timeLeft.seconds.toString().padStart(2, '0')}
@@ -212,8 +198,7 @@ export default function Index() {
         </section>
         
         {/* First wedding poster */}
-        
-           <FadeIn>
+        <FadeIn>
           <div className="flex justify-center px-4">
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/5579c30411b83293c9d043165aa13ba2aafcc22a?width=536"
@@ -223,12 +208,10 @@ export default function Index() {
             />
           </div>
         </FadeIn>
-        
       </section>
 
-      {/* LARGE WEDDING PHOTO WITH FRAME */}
-      <section className="relative w-full max-w-3xl mx-auto my-12">
-        {/* Background Image (Khung viền hồng) */}
+      {/* LARGE WEDDING PHOTO WITH FRAME - ĐÃ FIX RESPONSIVE TẠI ĐÂY */}
+      <section className="relative w-full max-w-3xl mx-auto my-12 px-2 sm:px-6">
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/26f3be24eb76127af180d537d8409fa69a81f92e?width=860"
           alt="Wedding photo background frame"
@@ -236,25 +219,28 @@ export default function Index() {
           style={{ aspectRatio: "29/41" }}
         />
 
-        {/* Lớp Overlay chứa nội dung */}
-        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-12 sm:px-20 py-16 sm:py-24">
+        {/* Fix 1: Giảm padding px-12 xuống px-6 trên mobile để nới rộng không gian hiển thị */}
+        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center px-6 sm:px-20 py-10 sm:py-24">
           
           {/* 1. FAMILY SECTION */}
-          <div className="w-full mb-10 sm:mb-40 bg-transparent">
-            <div className="grid grid-cols-2 gap-4 sm:gap-10 w-full">
+          <div className="w-full mb-6 sm:mb-40 bg-transparent">
+            {/* Fix 2: Giảm gap trên mobile xuống gap-2 để chữ không bị chẹt */}
+            <div className="grid grid-cols-2 gap-2 sm:gap-10 w-full">
               {/* NHÀ TRAI */}
               <div className="flex flex-col items-center">
                 <FadeIn delay={100}>
+                  {/* Fix 3: Đồng bộ size chữ tiêu đề (16px Mobile / 22px PC) */}
                   <h3
-                    className="text-[30px] sm:text-[20px] mb-3 sm:mb-4 tracking-wider uppercase text-[#000000]"
+                    className="text-[16px] sm:text-[22px] mb-2 sm:mb-4 tracking-wider uppercase text-[#000000]"
                     style={{ fontFamily: "Fahkwang, sans-serif", fontWeight: 400 }}
                   >
                     NHÀ TRAI
                   </h3>
                 </FadeIn>
                 <FadeIn delay={250}>
+                  {/* Fix 4: Đồng bộ size chữ tên (14px Mobile / 20px PC) */}
                   <p
-                    className="text-[30px] sm:text-[20px] text-center leading-relaxed mb-4 sm:mb-6 uppercase text-[#000000]"
+                    className="text-[14px] sm:text-[20px] text-center leading-relaxed mb-2 sm:mb-6 uppercase text-[#000000]"
                     style={{ fontFamily: "'Crimson Pro', serif", fontWeight: 400 }}
                   >
                     ÔNG TRẦN VIẾT ĐÀO
@@ -262,9 +248,9 @@ export default function Index() {
                     BÀ HOÀNG THỊ NGHĨA
                   </p>
                 </FadeIn>
-                {/* Hoa trang trí */}
                 <FadeIn delay={400}>
-                  <div className="relative h-28 w-32 sm:h-36 sm:w-40 flex justify-center mt-2">
+                  {/* Fix 5: Thu nhỏ hoa văn trên mobile để không lấn viền */}
+                  <div className="relative h-16 w-24 sm:h-36 sm:w-40 flex justify-center mt-2">
                     <img
                       src="https://api.builder.io/api/v1/image/assets/TEMP/ceccbcfdae8a8c3a0ac58cf1773c5631ee91426e?width=138"
                       alt=""
@@ -285,7 +271,7 @@ export default function Index() {
               <div className="flex flex-col items-center">
                 <FadeIn delay={150}>
                   <h3
-                    className="text-[20px] sm:text-[20px] mb-3 sm:mb-4 tracking-wider uppercase text-[#000000]"
+                    className="text-[16px] sm:text-[22px] mb-2 sm:mb-4 tracking-wider uppercase text-[#000000]"
                     style={{ fontFamily: "Fahkwang, sans-serif", fontWeight: 400 }}
                   >
                     NHÀ GÁI
@@ -293,7 +279,7 @@ export default function Index() {
                 </FadeIn>
                 <FadeIn delay={300}>
                   <p
-                    className="text-[20px] sm:text-[20px] text-center leading-relaxed mb-4 sm:mb-6 uppercase text-[#000000]"
+                    className="text-[14px] sm:text-[20px] text-center leading-relaxed mb-2 sm:mb-6 uppercase text-[#000000]"
                     style={{ fontFamily: "'Crimson Pro', serif", fontWeight: 400 }}
                   >
                     ÔNG HOÀNG ĐỨC CƯ
@@ -301,9 +287,8 @@ export default function Index() {
                     BÀ NGUYỄN THỊ BÉ
                   </p>
                 </FadeIn>
-                {/* Hoa trang trí */}
                 <FadeIn delay={450}>
-                  <div className="relative h-28 w-32 sm:h-36 sm:w-40 flex justify-center mt-2">
+                  <div className="relative h-16 w-24 sm:h-36 sm:w-40 flex justify-center mt-2">
                     <img
                       src="https://api.builder.io/api/v1/image/assets/TEMP/ceccbcfdae8a8c3a0ac58cf1773c5631ee91426e?width=138"
                       alt=""
@@ -326,21 +311,20 @@ export default function Index() {
           <div className="flex flex-col items-center w-full bg-transparent">
             <FadeIn delay={200}>
               <p
-                className="text-[16px] sm:text-[20px] text-center tracking-wide mb-6 sm:mb-8 text-[#000000] uppercase"
+                className="text-[14px] sm:text-[20px] text-center tracking-wide mb-4 sm:mb-8 text-[#000000] uppercase"
                 style={{ fontFamily: "'Crimson Pro', serif", fontWeight: 400 }}
               >
                 TRÂN TRỌNG BÁO TIN LỄ THÀNH HÔN CỦA
               </p>
             </FadeIn>
             
-            {/* Tên Cô dâu - Chú rể */}
             <FadeIn delay={400}>
               <div 
-                className="flex flex-col items-center text-[36px] sm:text-[48px] text-center text-[#333]"
+                className="flex flex-col items-center text-[32px] sm:text-[48px] text-center text-[#333]"
                 style={{ fontFamily: "'Dancing Script', 'Great Vibes', cursive", fontWeight: 400, lineHeight: 1.3 }}
               >
                 <span>Trần Thị Hải Ngân</span>
-                <span className="my-1">&</span>
+                <span className="my-1 text-[24px] sm:text-[30px]">&</span>
                 <span>Hoàng Đức Tuấn</span>
               </div>
             </FadeIn>
@@ -363,11 +347,10 @@ export default function Index() {
         </FadeIn>
       </section>
       
-      {/* THIỆP MỜI CHI TIẾT (FULL SCREEN & RESPONSIVE) */}
+      {/* THIỆP MỜI CHI TIẾT */}
       <section className="w-full bg-white py-16 sm:py-24 lg:py-32 flex justify-center px-4 sm:px-8 md:px-16 overflow-hidden">
         <div className="w-full flex flex-col items-center text-center">
           
-          {/* Header Thiệp */}
           <FadeIn>
             <h2 
               className="text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] text-[#000000] italic font-semibold mb-6 lg:mb-6"
@@ -386,7 +369,6 @@ export default function Index() {
             </p>
           </FadeIn>
           
-          {/* Icon Chuông / Ruy băng */}
           <FadeIn delay={250}>
             <img 
               src="https://api.builder.io/api/v1/image/assets/TEMP/ceccbcfdae8a8c3a0ac58cf1773c5631ee91426e?width=100" 
@@ -395,7 +377,6 @@ export default function Index() {
             />
           </FadeIn>
 
-          {/* Hôn lễ */}
           <FadeIn>
             <h3 
               className="text-[16px] sm:text-[20px] md:text-[26px] lg:text-[32px] font-bold tracking-widest mb-6 lg:mb-10 text-black uppercase"
@@ -405,7 +386,6 @@ export default function Index() {
             </h3>
           </FadeIn>
 
-          {/* Khối Ngày Tháng */}
           <FadeIn delay={200}>
             <div className="flex items-center justify-center gap-4 sm:gap-8 lg:gap-12 my-2 lg:my-6" style={{ fontFamily: "'Crimson Pro', serif" }}>
               <div className="text-right">
@@ -437,10 +417,8 @@ export default function Index() {
             </p>
           </FadeIn>
 
-          {/* Dòng kẻ ngang phân cách */}
           <div className="w-[90%] sm:w-4/5 max-w-5xl h-[1px] bg-gray-200 my-8 lg:my-12"></div>
 
-          {/* Tiệc mừng */}
           <FadeIn>
             <h3 
               className="text-[18px] sm:text-[24px] md:text-[30px] lg:text-[36px] font-bold tracking-widest mb-6 lg:mb-10 text-[#0b1f3f] uppercase px-4"
@@ -471,10 +449,8 @@ export default function Index() {
             </p>
           </FadeIn>
 
-          {/* Dòng kẻ ngang phân cách */}
           <div className="w-[90%] sm:w-4/5 max-w-5xl h-[1px] bg-gray-200 my-10 lg:my-16"></div>
 
-          {/* Footer Thiệp */}
           <FadeIn>
             <p 
               className="text-[14px] sm:text-[18px] md:text-[24px] lg:text-[30px] text-gray-500 tracking-widest mb-8 lg:mb-12 uppercase"
@@ -484,7 +460,6 @@ export default function Index() {
             </p>
           </FadeIn>
 
-          {/* Tên Cô Dâu Chú Rể */}
           <FadeIn delay={200}>
             <div 
               className="flex flex-col items-center text-[42px] sm:text-[64px] md:text-[86px] lg:text-[110px] text-black"
