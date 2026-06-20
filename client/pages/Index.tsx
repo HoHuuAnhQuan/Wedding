@@ -206,7 +206,7 @@ export default function Index() {
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/5579c30411b83293c9d043165aa13ba2aafcc22a?width=536"
               alt="Wedding poster"
-              className="w-full max-w-[350px]"
+              className="w-full max-w-[550px] h-40"
               style={{ aspectRatio: "67/95" }}
             />
           </div>
@@ -342,7 +342,7 @@ export default function Index() {
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/5579c30411b83293c9d043165aa13ba2aafcc22a?width=536"
               alt="Wedding poster"
-              className="w-full max-w-[350px]"
+              className="w-full max-w-[550px] h-40"
               style={{ aspectRatio: "67/95" }}
             />
           </div>
@@ -426,12 +426,12 @@ export default function Index() {
               className="text-[18px] sm:text-[24px] md:text-[30px] lg:text-[36px] font-bold tracking-widest mb-6 lg:mb-10 text-[#0b1f3f] uppercase px-4"
               style={{ fontFamily: "'Crimson Pro', serif", lineHeight: 1.4 }}
             >
-              BUỔI TIỆC MỪNG THÀNH HÔN CÙNG GIA ĐÌNH
+              ĐẾN DỰ BUỔI TIỆC MỪNG THÀNH HÔN CÙNG GIA ĐÌNH
             </h3>
           </FadeIn>
           
           <FadeIn delay={150}>
-            <p className="text-[14px] sm:text-[20px] md:text-[26px] lg:text-[32px] tracking-widest mb-2 lg:mb-4" style={{ fontFamily: "'Crimson Pro', serif" }}>
+            <p className="text-[20px] sm:text-[30px] md:text-[30px] lg:text-[32px] tracking-widest mb-2 lg:mb-4" style={{ fontFamily: "'Crimson Pro', serif" }}>
               15 GIỜ 30
             </p>
           </FadeIn>
