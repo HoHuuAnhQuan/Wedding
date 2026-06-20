@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-
+import FallingEffect from './FallingEffect'; // Đường dẫn tới file hiệu ứng rơi
+import WeddingAlbum from './WeddingAlbum';   // Đường dẫn tới file album ảnh
+import ScrollReveal from './ScrollReveal';
 // --- COMPONENT TRỢ GIÚP HIỆU ỨNG ĐỘNG (SCROLL REVEAL) ---
 function FadeIn({ children, delay = 0, direction = "up" }) {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
 
   useEffect(() => {
+    document.title = "Thiệp Mời Đám Cưới - Trần Thị Hải Ngân & Hoàng Đức Tuấn";
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
@@ -73,8 +76,10 @@ export default function Index() {
   }, []);
 
   return (
+    
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#FFF8F3" }}>
-      
+      <ScrollReveal>
+      <FallingEffect />
       {/* HERO SECTION */}
       <section className="relative overflow-hidden pb-0">
         <div className="absolute left-[40%] top-24 -translate-x-1/2 pointer-events-none z-0 transition-transform duration-1000 hover:scale-105">
@@ -473,7 +478,8 @@ export default function Index() {
 
         </div>
       </section>
-    
+    <WeddingAlbum />
+    </ScrollReveal>
     </div>
   );
 }

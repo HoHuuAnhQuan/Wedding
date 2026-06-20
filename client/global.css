@@ -118,3 +118,9 @@
     white-space: pre;
   }
 }
+div[style*="cursor: pointer"]:hover img {
+  transform: scale(1.08);
+}
+div[style*="cursor: pointer"]:hover div[style*="opacity: 0"] {
+  opacity: 1 !important;
+}
