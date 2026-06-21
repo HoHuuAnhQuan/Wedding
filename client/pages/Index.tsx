@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import FallingEffect from './FallingEffect'; // Đường dẫn tới file hiệu ứng rơi
 import WeddingAlbum from './WeddingAlbum';   // Đường dẫn tới file album ảnh
 import ScrollReveal from './ScrollReveal';
+
 // --- COMPONENT TRỢ GIÚP HIỆU ỨNG ĐỘNG (SCROLL REVEAL) ---
 function FadeIn({ children, delay = 0, direction = "up" }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -237,7 +238,7 @@ export default function Index() {
                     className="text-[16px] sm:text-[22px] mb-2 sm:mb-4 tracking-wider uppercase text-[#000000]"
                     style={{ fontFamily: "Fahkwang, sans-serif", fontWeight: 400 }}
                   >
-                    NHÀ TRAI
+                    NHÀ GÁI
                   </h3>
                 </FadeIn>
                 <FadeIn delay={250}>
@@ -277,7 +278,7 @@ export default function Index() {
                     className="text-[16px] sm:text-[22px] mb-2 sm:mb-4 tracking-wider uppercase text-[#000000]"
                     style={{ fontFamily: "Fahkwang, sans-serif", fontWeight: 400 }}
                   >
-                    NHÀ GÁI
+                    NHÀ TRAI
                   </h3>
                 </FadeIn>
                 <FadeIn delay={300}>
