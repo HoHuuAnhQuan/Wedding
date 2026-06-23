@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 
 // Hãy đảm bảo đường dẫn ảnh chính xác với thư mục dự án của bạn (ví dụ đặt trong thư mục public hoặc src/assets)
 const weddingImages = [
-  { id: 1, src: '/{12035BB5-ACE5-491A-BD97-9F52BC07CC05}.jpg', title: 'Khoảnh khắc ngọt ngào' },
-  { id: 2, src: '/{11875E02-25AA-4221-8D41-8A4C7CE33806}.jpg', title: 'Bên nhau bình yên' },
-  { id: 3, src: '/{61A9E0A2-0AB5-463D-84EB-84B3C4A3B5BD}.jpg', title: 'Nụ cười hạnh phúc' },
-  { id: 4, src: '/z7958686977577_bb5af7dfb4ef73148b3fcc431e5512cb.jpg', title: 'Chung lối bước đi' },
+  { id: 1, src: '../asset/wedding1.jpg', title: 'Khoảnh khắc ngọt ngào' },
+  { id: 2, src: '../asset/wedding2.jpg', title: 'Bên nhau bình yên' },
+  { id: 3, src: '../asset/wedding3.jpg', title: 'Nụ cười hạnh phúc' },
+  { id: 4, src: '../asset/wedding4.jpg', title: 'Chung lối bước đi' },
+  { id: 5, src: '../asset/wedding5.jpg', title: 'Hạnh phúc trọn vẹn' },
 ];
 
 const WeddingAlbum = () => {
