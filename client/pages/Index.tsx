@@ -318,7 +318,7 @@ export default function Index() {
                 className="text-[14px] sm:text-[20px] text-center tracking-wide mb-4 sm:mb-8 text-[#000000] uppercase"
                 style={{ fontFamily: "'Crimson Pro', serif", fontWeight: 400 }}
               >
-                TRÂN TRỌNG BÁO TIN LỄ THÀNH HÔN CỦA
+                TRÂN TRỌNG BÁO TIN LỄ VU QUY CỦA
               </p>
             </FadeIn>
             
@@ -427,7 +427,7 @@ export default function Index() {
               className="text-[18px] sm:text-[24px] md:text-[30px] lg:text-[36px] font-bold tracking-widest mb-6 lg:mb-10 text-[#0b1f3f] uppercase px-4"
               style={{ fontFamily: "'Crimson Pro', serif", lineHeight: 1.4 }}
             >
-              ĐẾN DỰ BUỔI TIỆC MỪNG THÀNH HÔN CÙNG GIA ĐÌNH
+              ĐẾN DỰ BUỔI TIỆC MỪNG VU QUY CÙNG GIA ĐÌNH
             </h3>
           </FadeIn>
           
